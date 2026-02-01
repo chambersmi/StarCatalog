@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Stars</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>proper</th>
+            <th>mag</th>
+            <th>ra</th>
+            <th>dec</th>
+            <th>con</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model.Stars)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.Proper</td>
+                <td>@s.Mag</td>
+                <td>@s.RA</td>
+                <td>@s.Dec</td>
+                <td>@s.Con</td>
+            </tr>
+        }
+    </tbody>
+</table>
