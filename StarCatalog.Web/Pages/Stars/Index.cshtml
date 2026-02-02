@@ -1,0 +1,37 @@
+﻿@page
+@model StarCatalog.Web.Pages.Stars.IndexModel
+@{
+}
+
+<h1>TESTING TESTING TESTING</h1>
+<h1>Stars</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Proper</th>
+            <th>Mag</th>
+            <th>RA</th>
+            <th>Dec</th>
+            <th>Con</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model.Result.Items)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.Proper</td>
+                <td>@s.Mag</td>
+                <td>@s.RA</td>
+                <td>@s.Dec</td>
+                <td>@s.Con</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    Page @Model.Result.Page of @Model.Result.TotalCount
+</p>

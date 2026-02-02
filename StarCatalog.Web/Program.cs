@@ -1,6 +1,8 @@
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using StarCatalog.Web.Data;
+using StarCatalog.Web.Repositories;
+using StarCatalog.Web.Services;
 
 namespace StarCatalog.Web
 {
@@ -16,6 +18,9 @@ namespace StarCatalog.Web
             {
                 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            builder.Services.AddScoped<IStarService, StarService>();
+            builder.Services.AddScoped<IStarRepository, StarRepository>();
 
             var app = builder.Build();
 

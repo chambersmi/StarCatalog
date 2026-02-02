@@ -1,4 +1,7 @@
-﻿namespace StarCatalog.Web.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace StarCatalog.Web.Models
 {
     public class Star
     {
